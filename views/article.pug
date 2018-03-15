@@ -1,0 +1,15 @@
+extends layout
+//-remember the author is equal to the user id, we now extracted the name from the id using the findById method
+block content
+	h1= article.title
+	h5 Article written by #{author}
+	p= article.body
+	hr
+	if user
+		if user.id ==article.author
+			a.btn.btn-default(href='/articles/edit/'+ article._id) Edit
+			a.btn.btn-danger.delete-article(href='#', data-id=article._id) Delete
+
+
+//-After doing all these it is still posible for the user to access this links directly through the browser url
+//- so we need to perform authorization in the backend too

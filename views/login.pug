@@ -1,0 +1,14 @@
+extends layout
+
+block content
+		h2 Login
+		form(method='POST', action='/users/login')
+			#form-group
+				label Username:
+				input.form-control(name='username', type='text')
+			#form-group
+				label Password:
+				input.form-control(name='password', type='password')
+			br
+			input.btn.btn-primary(type='submit',value='Submit')
+//-To implement the login we are going to use passport, so we are going to create a config file here and put the file inside of it
